@@ -778,3 +778,172 @@
                                 <ul>
                                     <li>Creating interactive dashboards and advanced DAX measures in Power BI</li>
                                     <li>Developing robust Power Query pipelines and cash flow forecasting models in Excel</li>
+                                    <li>Writing complex SQL queries for data extraction, cleaning, and performance analysis</li>
+                                    <li>Assisting clients with data-driven decision-making and business optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-left">
+                            <div class="company">Rayan Technologies</div>
+                            <div class="location">Riyadh, Saudi Arabia</div>
+                            <div class="dates">2023 - 2025</div>
+                        </div>
+                        <div class="job-right">
+                            <div class="job-title">Account Manager & Operations Manager</div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Managed B2B sales pipelines, account management, and corporate client accounts</li>
+                                    <li>Utilized Odoo ERP, Etimad, and Furas platforms for tendering and procurement processes</li>
+                                    <li>Optimized daily operational workflows and improved administrative efficiency</li>
+                                    <li>Monitored key performance metrics and financial reporting structures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Education & Skills</h3>
+                    
+                    <div class="education-entry">
+                        <div class="education-left">
+                            <div class="school">Professional Training</div>
+                            <div class="location">Riyadh / Online</div>
+                            <div class="dates">Continuous</div>
+                        </div>
+                        <div class="education-right">
+                            <div class="degree">Data Analysis & BI Certifications</div>
+                            <div class="degree-description">
+                                <ul>
+                                    <li>Preparing for Microsoft Power BI Data Analyst PL-300 certification exam</li>
+                                    <li>Completed specialized professional courses in SQL, and Advanced Excel Modeling</li>
+                                    <li>Active continuous learning on Coursera and DataCamp platforms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">Languages</h3>
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <div class="language-name">Arabic</div>
+                            <div class="proficiency-bar">
+                                <div class="proficiency-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="proficiency-label">Native</div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">English</div>
+                            <div class="proficiency-bar">
+                                <div class="proficiency-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="proficiency-label">Professional</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <div>
+                            <strong>Location</strong>
+                            <p>Riyadh, Saudi Arabia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <p>Your LinkedIn Profile</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>🐙</span>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p>github.com/RAMA20100</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Ramadan Al-Bassiouni. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('show');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .skill-item, .project-category-card, .job-entry, .education-entry').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
