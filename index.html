@@ -493,6 +493,16 @@
             box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
         }
 
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #a855f7;
+        }
+
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -977,18 +987,22 @@
                         <span>💼</span>
                         <div>
                             <strong>LinkedIn</strong>
-                            <p>Your LinkedIn Profile</p>
+                            <p><a href="https://www.linkedin.com/in/ramadan-al-bassiouni-9a899b1a8/" target="_blank">View LinkedIn Profile</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span>🐙</span>
                         <div>
                             <strong>GitHub</strong>
-                            <p>github.com/RAMA20100</p>
+                            <p><a href="https://github.com/RAMA20100" target="_blank">github.com/RAMA20100</a></p>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <!-- Contact Form connected to Web3Forms -->
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- استبدل المفتاح أدناه بمفتاحك المجاني من موقع web3forms.com لاحقاً، هذا مفتاح تجريبي افتراضي -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -1043,14 +1057,9 @@
             });
         }, observerOptions);
 
+        document.querySelectorAll('.section, .skill-item, .project-category-card, .job-entry, .education-entry').execute = function() {};
         document.querySelectorAll('.section, .skill-item, .project-category-card, .job-entry, .education-entry').forEach(el => {
             observer.observe(el);
-        });
-
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
         });
     </script>
 </body>
